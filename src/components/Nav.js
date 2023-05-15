@@ -1,49 +1,32 @@
-import React from 'react';
+import React from "react";
 
-export default function Nav(props) {
-  const { currentTab, handleTabChange } = props;
-    
+function Nav(props) {
+  const tabs = ["About", "Portfolio", "Contact", "Resume"];
   return (
-    <nav>
-    <ul className="nav nav-tabs">
-      <li className="nav-item">
-          <a
-            href="#about"
-            onClick={() => handleTabChange('About')}
-            className={currentTab === 'About' ? 'nav-link active' : 'nav-link'}
+    <div className="tabs">
+      <ul className="nav nav-tabs">
+        {tabs.map((tab) => (
+          <li
+            className={
+              props.currentPage === tab ? "nav-item is-active" : "nav-item"
+            }
+            key={tab}
           >
-            About
-          </a>
-        </li>
-        <li className="nav-item">
-          <a
-            href="#portfolio"
-            onClick={() => handleTabChange('Portfolio')}
-            className={currentTab === 'Portfolio' ? 'nav-link active' : 'nav-link'}
-          >
-            Portfolio
-          </a>
-        </li>
-        <li className="nav-item">
-          <a
-            href="#contact"
-            onClick={() => handleTabChange('Contact')}
-            className={currentTab === 'Contact' ? 'nav-link active' : 'nav-link'}
-          >
-            Contact
-          </a>
-        </li>
-        <li className="nav-item">
-          <a
-            href="#resume"
-            onClick={() => handleTabChange('Resume')}
-            className={currentTab === 'Resume' ? 'nav-link active' : 'nav-link'}
-          >
-            Resume
-          </a>
-        </li>
-    </ul>
-    </nav>
-
+            <a
+              href={"#" + tab}
+  
+              onClick={() => props.handlePageChange(tab)}
+              className={
+                props.currentPage === tab ? "nav-link active" : "nav-link"
+              }
+            >
+              {tab}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
-};
+}
+
+export default Nav;
