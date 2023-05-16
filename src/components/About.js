@@ -3,7 +3,7 @@ import React from "react";
 function About() {
   return (
     <div>
-      <p className="content mt-4">
+      <p className="content">
         about info
       </p>
       <p className="content">
