@@ -2,6 +2,14 @@ import React, { useState } from 'react';
 
 import { validateEmail } from '../utils/helpers';
 
+const styles = {
+  formButton: {
+    background: '#a99985',
+    color: '#f5f1ed',
+    width: '150px', 
+  },
+};
+
 function Form() {
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
@@ -26,7 +34,7 @@ function Form() {
     e.preventDefault();
 
     if (!validateEmail(email)) {
-      setErrorMessage('email is invalid');
+      setErrorMessage('Email is invalid');
       return;
     }
 
@@ -58,7 +66,7 @@ function Form() {
           name="email"
           onChange={handleInputChange}
           type="email"
-          placeholder="email"
+          placeholder="Email"
         />
         </div>
         <div className="form-group">
@@ -79,15 +87,15 @@ function Form() {
           placeholder="Query"
         />
         </div>
-        <button type="submit"  className="btn btn-primary" onClick={handleFormSubmit}>
+        <button type="submit"  className="btn" style={styles.formButton}  onClick={handleFormSubmit}>
           Submit
         </button>
-      </form>
-      {errorMessage && (
+        {errorMessage && (
         <div>
           <p className="error-text">{errorMessage}</p>
         </div>
       )}
+      </form>
       </div>
     </div>
   );

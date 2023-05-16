@@ -6,30 +6,85 @@
   --brown: #a99985;
 }
 
-body {
-  line-height: 1.3;
-  height: 100%;
-  margin: 0;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  background-color: var(--dark)
-}
 
 header {
     background: var(--dark);
 }
-
-
 
 form {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   margin: 50px;
-  width: 500px;
 }
 
 .form-input {
   width: 500px;
   padding: 10px;
   margin: 5px;
+}
+
+form button:hover {
+  background: var(--dark);
+}
+
+.contact {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.contact li {
+  list-style-type: none;
+}
+
+.contact a {
+  color: var(--brown);
+  padding: 10px;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.contact a:hover {
+  color: var(--dark);
+  
+  }
+
+.projects {
+  flex: 4;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-content {
+  padding: 10px;
+}
+
+.card img {
+  margin: 2px;
+  max-width: 400px;
+  border: solid white 3px;
+  border-radius: 8px;
+}
+
+.card img:hover {
+  box-shadow: inset 0px 0px 8px
+  var(--dark), 0 0 15px
+  var(--dark);
+}
+
+.card {
+  max-width: 410px;
 }
