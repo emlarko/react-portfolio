@@ -32,7 +32,7 @@ function Resume() {
         </section>
       </div>
       <div className="content-button col-lg-6 col-md-6 col-sm-12">
-      <a href="/EL-CV.pdf" className="btn btn-primary" role="button">
+      <a href="./EL-CV.pdf" className="btn btn-primary" role="button">
         <FontAwesomeIcon icon={faDownload} size="lg"/>Download My CV</a>
       </div>
     </div>

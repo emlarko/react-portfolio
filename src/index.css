@@ -29,11 +29,6 @@ header {
   padding: 10px
 }
  
-.navbar .navbar-brand:hover {
-  color: var(--light);
-  font-style: italic;
-} 
-
 
 .nav .nav-item .nav-link {
   color: var(--darker);
