@@ -55,7 +55,7 @@ The contact form cannot be submitted as the application does not have a backend.
 
 ### Screenshots
 
-![Screenshot](images/portfolioscreenshot.png?raw=true "Screenshot")
-![Screenshot](images/portfolioscreenshot1.png?raw=true "Screenshot")
-![Screenshot](images/portfolioscreenshot2.png?raw=true "Screenshot")
-![Screenshot](images/portfolioscreenshot3.png?raw=true "Screenshot")
+![Screenshot](public/images/portfolioscreenshot.png?raw=true "Screenshot")
+![Screenshot](public/images/portfolioscreenshot1.png?raw=true "Screenshot")
+![Screenshot](public/images/portfolioscreenshot2.png?raw=true "Screenshot")
+![Screenshot](public/images/portfolioscreenshot3.png?raw=true "Screenshot")
