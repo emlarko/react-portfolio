@@ -25,10 +25,10 @@ function Project(props) {
                   </ul>
                   <div className="card">
                     <footer>
-                      <button type="button" className="btn" style={{fontStyle:'strong'}} href={project.repo}>
+                      <button type="button" className="btn btn-primary" style={{fontStyle:'strong'}} href={project.repo}>
                         Repo
                       </button>
-                      <button type="button" className="btn" style={{fontStyle:'bold'}} href={project.live}>
+                      <button type="button" className="btn btn-primary" style={{fontStyle:'bold'}} href={project.live}>
                         Live Site
                       </button>
                     </footer>

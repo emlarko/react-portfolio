@@ -14,7 +14,7 @@ function Resume() {
       </p>
       </div>
       <div className="col-lg-6 col-md-6 col-sm-12">
-        <button type="submit"  className="btn" style={{background:'#a99985',color: '#f5f1ed'}}><FontAwesomeIcon icon={faDownload} size="lg"/> Download My CV</button>
+        <button type="submit"  className="btn btn-primary" ><FontAwesomeIcon icon={faDownload} size="lg"/> Download My CV</button>
       </div>
     </div>
   );

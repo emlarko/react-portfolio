@@ -1,17 +1,56 @@
+* {
+  font-family: 'Courier New', Courier, monospace;
+}
+
 :root {
-  --light: #f5f1ed;
-  --dark:  #70798c;
-  --darker: #252323; 
-  --beige: #dad2bc;
-  --brown: #a99985;
+  --light: #f9eddd;
+  --dark: #9bae6a; 
+  --darker: #0a0807;
+  --beige: #d8ad8c;
+  --brown: #6C584C;
 }
 
 body {
-  background: var(--light);
+  background: var(--beige);
 }
 
 header {
-    background: var(--dark);
+  background: var(--dark);
+}
+
+.navbar .navbar-brand {
+  font-size: 40px;
+  color: var(--light);
+  padding: 10px
+}
+ 
+.navbar .navbar-brand:hover {
+  color: var(--light);
+  font-style: italic;
+} 
+
+.nav-tabs .nav-item .nav-link {
+  background-color: var(--dark);
+  color: var(--darker);
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.nav-tabs .nav-item .nav-link.active {
+  color: var(--light);
+  background-color: var(--dark);
+}
+
+.tab-content {
+  border: 1px solid #dee2e6;
+  border-top: transparent;
+  padding: 15px;
+}
+
+.tab-content .tab-pane {
+  background-color: var(--dark);
+  min-height: 200px;
+  height: auto;
 }
 
 h2 {
@@ -37,8 +76,17 @@ form {
   margin: 5px;
 }
 
-form button:hover {
-  background: var(--dark);
+
+.btn-primary {
+  color: var(--light) !important;
+  background-color: var(--dark) !important;
+  border-color: #b0c57c !important;
+
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active {
+  color: #fff !important;
+  background-color: var(--brown) !important;
+  border-color: var(--beige) !important;
 }
 
 .contact {
@@ -73,6 +121,10 @@ form button:hover {
 
 .footer-contact a {
   padding: 10px;
+}
+
+.form button {
+  width: 50%;
 }
 
 .projects {

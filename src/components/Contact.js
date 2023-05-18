@@ -5,13 +5,6 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
 import { validateEmail } from '../utils/helpers';
 
-const styles = {
-  formButton: {
-    background: '#a99985',
-    color: '#f5f1ed',
-    width: '150px', 
-  },
-};
 
 function Form() {
   const [email, setEmail] = useState('');
@@ -92,7 +85,7 @@ function Form() {
           placeholder="Query"
         />
         </div>
-        <button type="submit"  className="btn" style={styles.formButton}  onClick={handleFormSubmit}>
+        <button type="submit"  className="btn btn-primary" onClick={handleFormSubmit}>
           Submit
         </button>
         {errorMessage && (
