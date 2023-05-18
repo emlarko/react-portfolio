@@ -29,15 +29,25 @@ const projects = [
     packages: "bcrypt, cloudinary, connect-session-sequelize, dotenv, express, express-handlebars, express-session, mysql2, sequelize, inquirer",
     image: "/images/tech_blog.png",
     description: "After signing into their account, the User is able to view blog posts and comments, including the date they were posted and by which user.",
-    repo: "https://github.com/emlarko/artist-portfolio",
-    live: "https://artist-portfolio.herokuapp.com/",
+    repo: "https://github.com/emlarko/tech-blog",
+    live: "https://powerful-hollows-22796.herokuapp.com/",
   },
+  {
+    id: 3,
+    title: "Weather Dashboard",
+    languages: "JS, CSS",
+    packages: "none",
+    image: "/images/weather-dashboard.png",
+    description: "When the user searches for a City, they are presented with the current weather and a 5-day forecast. This project uses the OpenWeather API and local storage.",
+    repo: "https://github.com/emlarko/tech-blog",
+    live: "https://powerful-hollows-22796.herokuapp.com/",
+  }
 ];
 
 function Portfolio() {
   return (
     <div>
-      <h2 className="portfolio">Portfolio</h2>
+      <h2 className="content">Portfolio</h2>
       <hr />
 
       <Project projects={projects} />

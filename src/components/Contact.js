@@ -51,7 +51,7 @@ function Form() {
 
   return (
     <div className='row'> 
-    <h2>Contact</h2>
+    <h2 className='content'>Contact</h2>
     <hr />
       <div className='col-lg-6 col-md-6 col-sm-12'>
       
@@ -97,8 +97,8 @@ function Form() {
       </div>
       <div className='col-lg-6 col-md-6 col-sm-12'>
         <ul className='contact'>
-          <li><a href="mailto:emilylarkin11@hotmail.co.uk"><FontAwesomeIcon icon={faEnvelope} size="2xl" className="fa-icon"style={{color: "#a99985",}}/> Email me</a></li>
-          <li><a href="https://github.com/emlarko"><FontAwesomeIcon icon={faGithub} size="2xl" className="fa-icon" style={{color: "#a99985",}} /> Check out my projects on GitHub</a></li>
+          <li><a href="mailto:emilylarkin11@hotmail.co.uk"><FontAwesomeIcon icon={faEnvelope} size="2xl" className="fa-icon"/> Email me</a></li>
+          <li><a href="https://github.com/emlarko"><FontAwesomeIcon icon={faGithub} size="2xl" className="fa-icon"/> Check out my projects on GitHub</a></li>
         </ul>
       </div>
     </div>
