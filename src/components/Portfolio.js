@@ -37,7 +37,7 @@ const projects = [
 function Portfolio() {
   return (
     <div>
-      <h3 className="portfolio">Portfolio</h3>
+      <h2 className="portfolio">Portfolio</h2>
       <hr />
 
       <Project projects={projects} />

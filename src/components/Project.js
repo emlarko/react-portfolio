@@ -4,9 +4,8 @@ function Project(props) {
   return (
     <div>
         {props.projects.map((project) => (
-          <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12">
             <div className="projects">
-            <div className="card col-md-6">
+            <div className="card col-lg-6 col-md-6 col-sm-12">
               <div className="card-image">
                 <figure>
                   <a href={project.live}>
@@ -26,18 +25,17 @@ function Project(props) {
                   </ul>
                   <div className="card">
                     <footer>
-                      <button type="button" className="btn" href={project.repo}>
-                        See the Repo
+                      <button type="button" className="btn" style={{fontStyle:'strong'}} href={project.repo}>
+                        Repo
                       </button>
-                      <button type="button" className="btn" href={project.live}>
-                        See the Live Site
+                      <button type="button" className="btn" style={{fontStyle:'bold'}} href={project.live}>
+                        Live Site
                       </button>
                     </footer>
                 </div>
               </div>
               </div>
             </div>
-          </div>
         ))}
       </div>
   );

@@ -28,12 +28,12 @@ function Header() {
     <div>
       <header>
       <nav className="navbar navbar-expand-lg"> 
-      <a href="/" className="navbar-brand">Emily Larkin</a>
+      <a href="/" className="navbar-brand" style={{color:'#dad2bc', fontSize:'30px', padding: '10px'}}>Emily Larkin</a>
       <div className="container-fluid">
       <button type="button" className="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span className="navbar-toggler-icon"></span>
         </button>
-      <div className="collapse navbar-collapse" id="navbarCollapse">
+      <div className="collapse navbar-collapse" id="navbarCollapse" style={{display:'flex', justifyContent:'end'}}>
       <Nav 
         currentPage={currentPage}
         handlePageChange={handlePageChange}
@@ -43,9 +43,7 @@ function Header() {
       </nav>
       </header>
       <main>
-        <body>
         <div>{renderPage(currentPage)}</div>
-        </body>
       </main>
     </div>
   );

@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
 import { validateEmail } from '../utils/helpers';
 
@@ -55,10 +58,12 @@ function Form() {
 
   return (
     <div className='row'> 
-      <div className='col-md-6'>
+    <h2>Contact</h2>
+    <hr />
+      <div className='col-lg-6 col-md-6 col-sm-12'>
       
       <form className="form">
-      <h3>Contact</h3>
+      
       <p>Please fill out the below form with any queries:</p>
         <div className="form-group">
         <input className='form-input' 
@@ -96,6 +101,12 @@ function Form() {
         </div>
       )}
       </form>
+      </div>
+      <div className='col-lg-6 col-md-6 col-sm-12'>
+        <ul className='contact'>
+          <li><a href="mailto:emilylarkin11@hotmail.co.uk"><FontAwesomeIcon icon={faEnvelope} size="2xl" className="fa-icon"style={{color: "#a99985",}}/> Email me</a></li>
+          <li><a href="https://github.com/emlarko"><FontAwesomeIcon icon={faGithub} size="2xl" className="fa-icon" style={{color: "#a99985",}} /> Check out my projects on GitHub</a></li>
+        </ul>
       </div>
     </div>
   );
