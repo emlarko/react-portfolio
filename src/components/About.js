@@ -6,7 +6,7 @@ function About() {
       <section className='content'>
         <h4>Hello there, I'm Emily</h4>
       </section>
-      <div className="content"><img className="portrait" src={process.env.PUBLIC_URL + 'images/portrait.png'} alt=""/></div>
+      <div className="content"><img className="portrait" src='./react-portfolio/images/portrait.png' alt=""/></div>
       <p className="content">
         <i>Welcome to my Portfolio, created with React.</i>
       </p>
