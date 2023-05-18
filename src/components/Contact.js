@@ -9,8 +9,9 @@ import { validateEmail } from '../utils/helpers';
 function Form() {
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
-  const [text, setText] = useState('');
+  const [query, setQuery] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
 
   const handleInputChange = (e) => {
     const { target } = e;
@@ -22,31 +23,37 @@ function Form() {
     } else if (inputType === 'name') {
       setName(inputValue);
     } else {
-      setText(inputValue);
+      setQuery(inputValue);
     }
   };
 
-  const handleFormSubmit = (e) => {
+   const handleFormSubmit = (e) => {
     e.preventDefault();
-
-    if (!validateEmail(email)) {
-      setErrorMessage('Email is invalid');
-      return;
+    if (!errorMessage) {
+      setSuccessMessage(`Thank you for your query ${name}`)
+      setEmail('');
+      setName('');
+      setQuery('')
     }
+  };
 
-    if (!name) {
-        setErrorMessage('Name is required');
-        return;
-    }
 
-    if (!text) {
-        setErrorMessage('Text is required');
-        return;
-    }
-
-    setName('');
-    setEmail('');
-    setText('');
+  const handleChange = (e) => {
+    e.preventDefault();
+    if (e.target.name === 'email') {
+      const isValid = validateEmail(e.target.value)
+      if (!isValid) {
+        setErrorMessage('Your email is invalid.');
+      } else {
+        setErrorMessage('');
+      } 
+    } else {
+        if (!e.target.value.length) {
+          setErrorMessage(`A ${e.target.name} is required.`);
+        } else {
+          setErrorMessage('');
+        }
+      }
   };
 
   return (
@@ -65,6 +72,7 @@ function Form() {
           onChange={handleInputChange}
           type="email"
           placeholder="Email"
+          onBlur={handleChange}
         />
         </div>
         <div className="form-group">
@@ -74,23 +82,31 @@ function Form() {
           onChange={handleInputChange}
           type="text"
           placeholder="Name"
+          onBlur={handleChange}
         />
         </div>
         <div className="form-group">
         <textarea className='form-input' rows="8"
-          value={text}
-          name="text"
+          value={query}
+          name="query"
           onChange={handleInputChange}
           type="text"
           placeholder="Query"
+          onBlur={handleChange}
         />
         </div>
         <button type="submit"  className="btn btn-primary" onClick={handleFormSubmit}>
           Submit
-        </button>
+        </button> <br />
+        
         {errorMessage && (
         <div>
           <p className="error-text">{errorMessage}</p>
+        </div>
+      )}
+             {successMessage && (
+        <div>
+          <p className="success-text">{successMessage}</p>
         </div>
       )}
       </form>
