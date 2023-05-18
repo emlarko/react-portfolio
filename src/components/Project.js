@@ -9,7 +9,7 @@ function Project(props) {
               <div className="card-image">
                 <figure>
                   <a href={project.live}>
-                    <img src={project.image} alt="" />
+                    <img src={process.env.PUBLIC_URL + project.image} alt="" />
                   </a>
                 </figure>
               </div>
