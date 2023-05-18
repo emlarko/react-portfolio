@@ -28,7 +28,7 @@ function Header() {
     <div>
       <header>
       <nav className="navbar navbar-expand-lg justify-content-between"> 
-      <p className="navbar-brand"> Emily Larkin</p>
+      <h1> Emily Larkin</h1>
       <div className="nav-links">
       <button type="button" className="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span className="navbar-toggler-icon"></span>
