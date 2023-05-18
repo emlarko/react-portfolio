@@ -39,8 +39,8 @@ const projects = [
     packages: "none",
     image: "/images/weather-dashboard.png",
     description: "When the user searches for a City, they are presented with the current weather and a 5-day forecast. This project uses the OpenWeather API and local storage.",
-    repo: "https://github.com/emlarko/tech-blog",
-    live: "https://powerful-hollows-22796.herokuapp.com/",
+    repo: "https://github.com/emlarko/ELweather-dashboard",
+    live: "https://emlarko.github.io/ELweather-dashboard/",
   }
 ];
 
