@@ -8,7 +8,7 @@ function Project(props) {
             <div className="card col-lg-6 col-md-6 col-sm-12">
               <div className="card-image">
                 <figure>
-                  <a href={project.live}>
+                  <a href={project.live} target="_blank" rel="noopener noreferrer">
                     <img src={project.image} alt="" />
                   </a>
                 </figure>
