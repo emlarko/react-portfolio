@@ -23,9 +23,6 @@ function Form() {
 
   const submitEmail = async (e) => {
     e.preventDefault();
-    if (!errorMessage) {
-      setSuccessMessage(`Thank you for your query`)
-    }
     const response = await fetch("http://localhost:3001/send", {
       method: "POST",
       headers: {
@@ -38,9 +35,9 @@ function Form() {
         const resData = await res;
         console.log(resData);
         if (resData.status === "success") {
-          alert("Message Sent");
+          setSuccessMessage(`Message sent, thank you for your query`)
         } else if (resData.status === "fail") {
-          alert("Message failed to send");
+          setErrorMessage(`Message failed to send`)
         }
       })
       .then(() => {
@@ -51,37 +48,6 @@ function Form() {
         });
       });
   };
-
-// function Form() {
-//   const [email, setEmail] = useState('');
-//   const [name, setName] = useState('');
-//   const [query, setQuery] = useState('');
-//   const [errorMessage, setErrorMessage] = useState('');
-//   const [successMessage, setSuccessMessage] = useState('');
-
-//   const handleInputChange = (e) => {
-//     const { target } = e;
-//     const inputType = target.name;
-//     const inputValue = target.value;
-
-//     if (inputType === 'email') {
-//       setEmail(inputValue);
-//     } else if (inputType === 'name') {
-//       setName(inputValue);
-//     } else {
-//       setQuery(inputValue);
-//     }
-//   };
-
-//    const handleFormSubmit = (e) => {
-//     e.preventDefault();
-//     if (!errorMessage) {
-//       setSuccessMessage(`Thank you for your query ${name}`)
-//       setEmail('');
-//       setName('');
-//       setQuery('')
-//     }
-//   };
 
 const handleChange = (e) => {
   e.preventDefault();
@@ -156,7 +122,7 @@ const handleChange = (e) => {
       <div className='col-lg-6 col-md-6 col-sm-12'>
         <ul className='contact'>
           <li><a href="mailto:emilylarkin11@hotmail.co.uk"><FontAwesomeIcon icon={faEnvelope} size="2xl" className="fa-icon"/> Email me</a></li>
-          <li><a href="https://github.com/emlarko"><FontAwesomeIcon icon={faGithub} size="2xl" className="fa-icon"/> Check out my projects on GitHub</a></li>
+          <li><a href="https://github.com/emlarko"  target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faGithub} size="2xl" className="fa-icon"/> Check out my projects on GitHub</a></li>
         </ul>
       </div>
     </div>

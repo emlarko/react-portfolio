@@ -5,6 +5,16 @@ import Project from "./Project";
 const projects = [
   {
     id: 0,
+    title: "Cup Coffee Shop",
+    languages: "JS, HTML, CSS",
+    packages: "express, react, node, graphql, nodemailer, google maps API, stripe, styled components",
+    image: "./images/coffee-shop-home.png",
+    description: "The Coffee Shop page allows users to view information about the shop, as well as order products from the retail page.",
+    repo: "https://github.com/emlarko/coffee-shop",
+    live: "https://warm-harbor-00106.herokuapp.com/",
+  },
+  {
+    id: 1,
     title: "Artist Portfolio",
     languages: "JS, CSS, Handlebars",
     packages: "bcrypt, cloudinary, connect-session-sequelize, dotenv, express, express-handlebars, express-session, mysql2, sequelize",
@@ -14,7 +24,7 @@ const projects = [
     live: "https://artist-portfolio.herokuapp.com/",
   },
   {
-    id: 1,
+    id: 2,
     title: "Marvel Character Finder",
     languages: "HTML, JS, CSS",
     packages: "None",
@@ -24,7 +34,7 @@ const projects = [
     live: "https://emlarko.github.io/marvel-character-finder/",
    },
    {
-    id: 2,
+    id: 3,
     title: "Tech Blog",
     languages: "JS, CSS, Handlebars",
     packages: "bcrypt, cloudinary, connect-session-sequelize, dotenv, express, express-handlebars, express-session, mysql2, sequelize, inquirer",
@@ -34,7 +44,7 @@ const projects = [
     live: "https://powerful-hollows-22796.herokuapp.com/",
   },
   {
-    id: 3,
+    id: 4,
     title: "Weather Dashboard",
     languages: "JS, CSS",
     packages: "none",

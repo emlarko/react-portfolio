@@ -25,10 +25,10 @@ function Project(props) {
                   </ul>
                   <div className="card">
                     <footer className="card-buttons">
-                      <a href={project.repo} className="btn btn-primary" role="button">
+                      <a href={project.repo} target="_blank" rel="noopener noreferrer" className="btn btn-primary" role="button">
                         Repo
                       </a>
-                      <a href={project.live} className="btn btn-primary" role="button">
+                      <a href={project.live} target="_blank" rel="noopener noreferrer" className="btn btn-primary" role="button">
                         Live Site
                       </a>
                     </footer>
