@@ -5,55 +5,100 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
 import { validateEmail } from '../utils/helpers';
 
-
-function Form() {
-  const [email, setEmail] = useState('');
-  const [name, setName] = useState('');
-  const [query, setQuery] = useState('');
+function Form() { 
   const [errorMessage, setErrorMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
+  const [mailerState, setMailerState] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  
+  const handleStateChange= (e) => {
+    setMailerState((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+  }
 
-  const handleInputChange = (e) => {
-    const { target } = e;
-    const inputType = target.name;
-    const inputValue = target.value;
-
-    if (inputType === 'email') {
-      setEmail(inputValue);
-    } else if (inputType === 'name') {
-      setName(inputValue);
-    } else {
-      setQuery(inputValue);
-    }
-  };
-
-   const handleFormSubmit = (e) => {
+  const submitEmail = async (e) => {
     e.preventDefault();
     if (!errorMessage) {
-      setSuccessMessage(`Thank you for your query ${name}`)
-      setEmail('');
-      setName('');
-      setQuery('')
+      setSuccessMessage(`Thank you for your query`)
     }
+    const response = await fetch("http://localhost:3001/send", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({ mailerState }),
+    })
+      .then((res) => res.json())
+      .then(async (res) => {
+        const resData = await res;
+        console.log(resData);
+        if (resData.status === "success") {
+          alert("Message Sent");
+        } else if (resData.status === "fail") {
+          alert("Message failed to send");
+        }
+      })
+      .then(() => {
+        setMailerState({
+          email: "",
+          name: "",
+          message: "",
+        });
+      });
   };
 
+// function Form() {
+//   const [email, setEmail] = useState('');
+//   const [name, setName] = useState('');
+//   const [query, setQuery] = useState('');
+//   const [errorMessage, setErrorMessage] = useState('');
+//   const [successMessage, setSuccessMessage] = useState('');
 
-  const handleChange = (e) => {
-    e.preventDefault();
-    if (e.target.name === 'email') {
-      const isValid = validateEmail(e.target.value)
-      if (!isValid) {
-        setErrorMessage('Your email is invalid.');
+//   const handleInputChange = (e) => {
+//     const { target } = e;
+//     const inputType = target.name;
+//     const inputValue = target.value;
+
+//     if (inputType === 'email') {
+//       setEmail(inputValue);
+//     } else if (inputType === 'name') {
+//       setName(inputValue);
+//     } else {
+//       setQuery(inputValue);
+//     }
+//   };
+
+//    const handleFormSubmit = (e) => {
+//     e.preventDefault();
+//     if (!errorMessage) {
+//       setSuccessMessage(`Thank you for your query ${name}`)
+//       setEmail('');
+//       setName('');
+//       setQuery('')
+//     }
+//   };
+
+const handleChange = (e) => {
+  e.preventDefault();
+  if (e.target.name === 'email') {
+    const isValid = validateEmail(e.target.value)
+    if (!isValid) {
+      setErrorMessage('Your email is invalid.');
+    } else {
+      setErrorMessage('');
+    } 
+  } else {
+      if (!e.target.value.length) {
+        setErrorMessage(`A ${e.target.name} is required.`);
       } else {
         setErrorMessage('');
-      } 
-    } else {
-        if (!e.target.value.length) {
-          setErrorMessage(`A ${e.target.name} is required.`);
-        } else {
-          setErrorMessage('');
-        }
       }
+    }
   };
 
   return (
@@ -67,35 +112,32 @@ function Form() {
       <p>Please fill out the below form with any queries:</p>
         <div className="form-group">
         <input className='form-input' 
-          value={email}
-          name="email"
-          onChange={handleInputChange}
-          type="email"
-          placeholder="Email"
+          placeholder="Name"
+          onChange={handleStateChange}
+          name="name"
+          value={mailerState.name}
           onBlur={handleChange}
         />
         </div>
         <div className="form-group">
         <input className='form-input'
-          value={name}
-          name="name"
-          onChange={handleInputChange}
-          type="text"
-          placeholder="Name"
+          placeholder="Email"
+          onChange={handleStateChange}
+          name="email"
+          value={mailerState.email}
           onBlur={handleChange}
         />
         </div>
         <div className="form-group">
         <textarea className='form-input' rows="8"
-          value={query}
-          name="query"
-          onChange={handleInputChange}
-          type="text"
-          placeholder="Query"
+          placeholder="Message"
+          onChange={handleStateChange}
+          name="message"
+          value={mailerState.message}
           onBlur={handleChange}
         />
         </div>
-        <button type="submit"  className="btn btn-primary" onClick={handleFormSubmit}>
+        <button type="submit"  className="btn btn-primary" onClick={submitEmail}>
           Submit
         </button> <br />
         
@@ -119,6 +161,6 @@ function Form() {
       </div>
     </div>
   );
-}
+};
 
 export default Form;
