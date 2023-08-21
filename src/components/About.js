@@ -18,7 +18,7 @@ function About() {
         While working at Word360, I helped with IT Tickets using MongoDB,<br /> 
         which led to more of an interest in Backend Development. <br />
         <br />
-        You can check out my projects on <a href="https://github.com/emlarko">GitHub</a>
+        You can check out my projects on <a href="https://github.com/emlarko" target="_blank" rel="noopener noreferrer">GitHub</a>
       </p>
       </div>
       </div>
