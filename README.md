@@ -43,15 +43,13 @@ The User viewing this portfolio will find an about me page first, which is set a
 
 When navigating to the portfolio page from the header, they will find images of previous projects, each with a short description and links to the repo and live site. 
 
-On the contact page, there is a form that can be filled out. If the email is invalid, a name is not entered or a query is not inputted, an error message appears when the User clicks off the box. 
+On the contact page, there is a form that can be filled out. If the email is invalid, a name is not entered or a query is not inputted, an error message appears when the User clicks off the box. When the form has been successfully filled out and submitted, the user will see a confirmation message, and I will receive an email with their query.
 
 When visiting the Resume page, the User will be able to view a set of my skills and will be able to download a copy of my CV.
 
-## Roadmap
-
-The contact form cannot be submitted as the application does not have a backend. This will be developed in the future.
-
 ### Live Site
+
+https://emlarko.github.io/react-portfolio/
 
 ### Screenshots
 
